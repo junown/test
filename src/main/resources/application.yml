@@ -1,0 +1,28 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          chzzk:
+            client-id: 7118939e-061b-4ad3-b4b3-bb0cb2432931
+            client-secret: KVsdi_hTL5DgKAqoznIjUNDIqoTjIPIw2kVshrZu1Rc
+            scope:
+              - "유저%20정보%20조회"
+              - "후원%20조회"
+              - "구독%20조회"
+              - "채팅%20메시지%20조회"
+              - "채널%20정보%20조회"
+            redirect-uri: "http://localhost:8001/login/oauth2/code/chzzk"
+            authorization-grant-type: authorization_code
+        provider:
+          chzzk:
+            # 🚨 (필수) 이 URI들도 치지직 로그인용 공식 URI여야 합니다.
+            authorization-uri: https://chzzk.naver.com/oauth/authorize
+            token-uri: https://chzzk.naver.com/oauth/token
+            user-info-uri: https://api.chzzk.naver.com/service/v1/user/user-info
+            user-name-attribute: userId # (예시)
