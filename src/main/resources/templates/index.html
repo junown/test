@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head><title>로그인</title></head>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+</head>
 <body>
-<h1>로그인</h1>
-<div th:unless="${#authentication}">
-    <a href="/oauth2/authorization/chzzk">치지직 아이디로 로그인</a>
-</div>
+<h1>치지직 API 테스트</h1>
 
-<div th:if="${#authentication}">
-    <p>로그인 되었습니다!</p>
-    <a href="/api/my-info">내 정보 보기 (API 호출)</a>
-</div>
+<a href="/oauth2/authorization/chzzk">
+    <button style="font-size: 20px; padding: 10px;">
+        치지직으로 로그인하기
+    </button>
+</a>
 </body>
 </html>
